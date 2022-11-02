@@ -24,10 +24,28 @@ $movie_id = $movie['id'];
 //setcookie('movie_id', $movie['id'], time()+60);
 
 if (isset($GET['addMovieToWatchlist'])) {
+
+  $user_id = $_COOKIE['UserId'];
+
+
   $conn = mysqli_connect('localhost', 'root', '', 'movie_bu');
   $query = "INSERT INTO `watch_list` (`movie_id`, `user_id`) VALUES ('$movie_id', '$user_id');";
   $result = mysqli_query($conn, $query);
 
+  if ($result)
+    echo "Successful Insert";
+  else
+    echo "Error while Inserting";
+
+  mysqli_close($conn);
+
+
+
+  /*
+  $conn = mysqli_connect('localhost', 'root', '', 'movie_bu');
+  $query = "INSERT INTO `watch_list` (`movie_id`, `user_id`) VALUES ('$movie_id', '$user_id');";
+  $result = mysqli_query($conn, $query);
+*/
 
   if ($result)
     echo "Successful Insert";
@@ -44,6 +62,23 @@ if (isset($GET['addMovieToWatchlist'])) {
 <html lang="en">
 
 <head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">

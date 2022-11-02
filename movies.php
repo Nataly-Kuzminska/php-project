@@ -7,8 +7,11 @@ FROM movies";
 $query = $standard_query;
 
 if (isset($_POST['submitBtn'])) {
-  $query = $standard_query;
+  $movie_title = $_POST['movie_title'];
+  $query = "SELECT posterUrl, title, description, id
+  FROM movies WHERE title LIKE '%$movie_title%'";
 }
+
 if (isset($_POST['titleAscBtn'])) {
   $query = "  SELECT posterUrl, title, description FROM movies
 ORDER BY title ASC";
