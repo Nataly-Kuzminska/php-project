@@ -12,7 +12,6 @@ paste that code into movies.
 
 
 <?php
-$movie_id = '11';
 $user_id = $_COOKIE['UserId'];
 
 //add this code into the movie-details.php
