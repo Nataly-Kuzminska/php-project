@@ -7,9 +7,15 @@ paste that code into movies.
 
 
 
+
+
+
+
 <?php
 $movie_id = '11';
 $user_id = $_COOKIE['UserId'];
+
+//add this code into the movie-details.php
 
 
 $conn = mysqli_connect('localhost', 'root', '', 'movie_bu');
@@ -22,6 +28,15 @@ else
 echo "Error while Inserting";
 
 mysqli_close($conn);
+
+
+
+
+
+
+
+
+
 
 // add this to account (add it to a "delete Movie" Button) Also add a list of all the movies on the watchlist to the account
 SELECT * FROM watch_list WHERE user_id = user.id;
